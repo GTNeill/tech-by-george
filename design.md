@@ -64,3 +64,9 @@ Canonical page route is `/stack`, titled “Stack — My Toolkit”; Home and He
 Add a separate, always-visible “General IT support toolkit” section between the project index and project tool directory. Use editorial rows with a role label, tool name, description and official link, in two columns on desktop and one on mobile. Include Vaultwarden, RustDesk, CortenDesk, Jitsi, Mattermost, Short.io, Ko-fi, TidyCal, HiHello, GenOffice and Docker. These are George’s general support tools, not automatically assigned dependencies of any project; do not imply unverified integrations or deployments.
 
 Increase Stack-page body content to 18px with generous line height, supporting text and controls to at least 15px, and compact tool links to 14px. Keep existing Bricolage/Plex typography and both themes. Remove mobile font-size reductions; allow labels, controls and rows to wrap without overflow. Do not change site-wide typography or APIs/database.
+
+## Home card hover preview — approved
+
+On hover-capable desktop devices, a brief pointer pause enlarges a project card into a floating preview above the grid. Use the existing screenshot (no live iframe or new requests to project sites), larger readable title/description and retained screenshot/title/host links to the live site in a new tab. Keep Copy link independent. Portal the preview to the body to escape animated stacking contexts; clamp it within viewport edges and allow long content to scroll. Moving off the original/preview closes it; Escape, page scroll and viewport resize dismiss it too. No grid reflow.
+
+Keyboard focus on a card shows the same visual enlargement without duplicating its focusable controls; original links and Copy remain operable. Touch devices keep existing cards and direct first-tap links. Preserve both themes, rounded catalog cards and brand fonts; skip preview animation for reduced motion. This is a Home-only component/style change, with no API/database or analytics changes.

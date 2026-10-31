@@ -1,0 +1,42 @@
+.project-card-preview {
+  position: fixed;
+  z-index: 100;
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--border));
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  box-shadow: 0 24px 80px #0007, 0 0 0 5px color-mix(in srgb, var(--background) 75%, transparent);
+  animation: project-preview-in 140ms ease-out;
+}
+.project-card-preview .project-card-image { max-height: 52dvh; }
+.project-card-preview .project-card-image img { object-fit: contain; }
+.project-card-preview .project-card-copy { padding: 24px 28px; gap: 14px; }
+.project-card-preview h2 { font-size: 28px; }
+.project-card-preview .project-card-description { font-size: 18px; line-height: 1.7; }
+.project-card-preview .label-mono { font-size: 13px; }
+.project-card-preview .project-card-copy > div:last-child a { font-size: 14px; overflow-wrap: anywhere; }
+.project-card-preview .project-card-copy button { font-size: 13px; }
+.project-preview-hint {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  pointer-events: none;
+}
+@keyframes project-preview-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .project-card-preview, [data-project-card].rise { animation: none; }
+}

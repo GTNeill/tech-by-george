@@ -52,4 +52,17 @@
 - Browser checks pass at 320–2560px, including both themes, expanded stacks, open directory, legacy query/hash redirect and no page errors. Body text 18px, supporting text 15px, compact links 14px.
 - Build/typecheck and lint pass; existing main-bundle size/deprecation warnings remain.
 - Dev server restarted because Vite served a stale cached app route after source update; fresh server uses current routes.
-- [ ] Commit/push preserving remote changes, deliver preview, check production bundle separately.
+- [x] Commit/push preserving remote changes: `95014b6` pushed to main; remote was unchanged at fetch.
+- [x] Production bundle checked after push: `/stack` HTTP 200 but `index-PJEF3B45.js` lacks My Toolkit, `/stack` route and new toolkit chunk. Deployment not yet verified; HTTP 200 is SPA fallback only.
+- Preview verified on running development server at port 4200; delivery follows.
+
+## Home card hover zoom
+- [x] User approved larger hover preview; live-site links retained, keyboard equivalent, touch unchanged.
+- [x] Read component/current styles and document approved design.
+- [x] Implement viewport-clamped portal preview, enlarged screenshot/text and dismissal behavior.
+- [x] Verify hover transfer, links, Copy, keyboard focus/Escape, touch, themes, reduced motion and viewport edges.
+- [x] Lint/typecheck/build pass; Home hover browser tests and existing Stack regression pass.
+- Bounds tested at 768/1024/1440/2560px in dark/light, first/middle/last cards; mobile first tap opens live site without preview. No page errors or horizontal overflow.
+- Preview uses existing screenshots (including pre-existing photography browser-check screenshot), not a live embedded site.
+- User now explicitly requested pushing changes to GitHub and checking the live site.
+- Pre-push verification: lint/build and Home hover browser tests pass; remote main has no newer commits. Commit/push and production verification follow.

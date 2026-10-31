@@ -1,5 +1,8 @@
 import { ArrowUpRight, Image as ImageIcon } from "lucide-react";
+import { createPortal } from "react-dom";
 import { CopyButton } from "./copy-button";
+import { useCardPreview } from "./use-card-preview";
+import "./project-card-preview.css";
 
 export interface ProjectView {
   id: number;
@@ -18,28 +21,60 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
-  const { title, url, host, tagline, description, image, featured } = project;
+  const { cardRef, previewRef, preview, enterCard, leave, cancelTimer, focusCard, blurCard } = useCardPreview();
 
   return (
+    <>
     <article
-      className={`rise group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-accent/50 ${
-        featured ? "md:col-span-2" : ""
+      ref={cardRef}
+      data-project-card={project.id}
+      onPointerEnter={enterCard}
+      onPointerLeave={leave}
+      onFocusCapture={focusCard}
+      onBlurCapture={blurCard}
+      className={`rise group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors duration-300 hover:border-accent/50 ${
+        project.featured ? "md:col-span-2" : ""
       }`}
       style={{ animationDelay: `${Math.min(index, 12) * 55}ms` }}
     >
+      <CardContents project={project} />
+    </article>
+    {preview && createPortal(
+      <article
+        ref={previewRef}
+        className="project-card-preview group"
+        data-preview-project={project.id}
+        data-preview-mode={preview.mode}
+        aria-label={`${project.title} enlarged preview`}
+        aria-hidden={preview.mode === "keyboard" ? true : undefined}
+        inert={preview.mode === "keyboard" ? true : undefined}
+        onPointerEnter={cancelTimer}
+        onPointerLeave={leave}
+        style={{ left: preview.left, top: preview.top, width: preview.width, pointerEvents: preview.mode === "keyboard" ? "none" : "auto" }}
+      >
+        <CardContents project={project} enlarged />
+      </article>, document.body,
+    )}
+    </>
+  );
+}
+
+function CardContents({ project, enlarged = false }: { project: ProjectView; enlarged?: boolean }) {
+  const { title, url, host, tagline, description, image } = project;
+  return <>
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative block aspect-[16/10] overflow-hidden border-b border-border bg-surface-2"
+        className="project-card-image relative block aspect-[16/10] overflow-hidden border-b border-border bg-surface-2"
         aria-label={`Open ${title}`}
       >
         {image ? (
           <img
             src={image}
             alt={`${title} screenshot`}
-            loading="lazy"
-            className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            loading={enlarged ? "eager" : "lazy"}
+            className="size-full object-cover object-top"
           />
         ) : (
           <span className="flex size-full flex-col items-center justify-center gap-2 text-muted-foreground">
@@ -47,10 +82,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             <span className="label-mono">No screenshot yet</span>
           </span>
         )}
-        <span className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-surface/90 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+        {enlarged && <span className="project-preview-hint">Click to open live site <ArrowUpRight size={14} aria-hidden="true" /></span>}
       </a>
 
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="project-card-copy flex flex-1 flex-col gap-3 p-5">
         <div className="flex items-start justify-between gap-3">
           <h2 className="font-display text-xl leading-tight font-semibold">
             <a
@@ -70,7 +105,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         ) : null}
 
         {description ? (
-          <p className="text-[15px] leading-relaxed text-muted-foreground">{description}</p>
+          <p className="project-card-description text-[15px] leading-relaxed text-muted-foreground">{description}</p>
         ) : null}
 
         <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
@@ -85,6 +120,5 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <CopyButton value={url} />
         </div>
       </div>
-    </article>
-  );
+    </>;
 }
