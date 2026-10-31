@@ -56,3 +56,11 @@ Below the overview, a searchable project index uses full-width numbered disclosu
 The inventory is curated static TypeScript, separate from database-managed project content. Compare live project IDs to reviewed IDs to flag newly added projects awaiting review. Evidence labels separate source implementation, observed public behavior and configuration-dependent services. GitHub, TypeScript, Vite and Runable sit in a separate build/workbench block, not the runtime stack. Hosting configs are labeled deployment targets; hardware models remain explicitly unknown. No private infrastructure identifiers or raw private source are published.
 
 Navigation: a secondary outlined Architecture button beside the existing orange Home help CTA; Architecture links in Help navigation and footer. Architecture provides Home and How I can help you return links plus shared theme toggle. Direct project anchors open their disclosure. Search, category filters, expand/collapse and reduced-motion support are keyboard accessible. Route is lazy-loaded to keep the existing Home bundle lean.
+
+## My Toolkit / Stack — approved follow-up
+
+Canonical page route is `/stack`, titled “Stack — My Toolkit”; Home and Help links read “My Toolkit” without an arrow. Preserve old `/architecture` links with a replace redirect that retains the hash. Internal inventory and CSS names can remain unchanged.
+
+Add a separate, always-visible “General IT support toolkit” section between the project index and project tool directory. Use editorial rows with a role label, tool name, description and official link, in two columns on desktop and one on mobile. Include Vaultwarden, RustDesk, CortenDesk, Jitsi, Mattermost, Short.io, Ko-fi, TidyCal, HiHello, GenOffice and Docker. These are George’s general support tools, not automatically assigned dependencies of any project; do not imply unverified integrations or deployments.
+
+Increase Stack-page body content to 18px with generous line height, supporting text and controls to at least 15px, and compact tool links to 14px. Keep existing Bricolage/Plex typography and both themes. Remove mobile font-size reductions; allow labels, controls and rows to wrap without overflow. Do not change site-wide typography or APIs/database.

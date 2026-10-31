@@ -5,6 +5,7 @@ import { Wordmark } from "../components/kit/primitives";
 import { ThemeToggle } from "../components/theme-toggle";
 import { useProjects } from "../queries/projects";
 import { architectureProjects, layerNames, REVIEWED_DATE, tools, type ArchitectureProject } from "../data/architecture";
+import { supportTools } from "../data/support-tools";
 import "../architecture.css";
 
 const toolMap = new Map(tools.map((tool) => [tool.id, tool]));
@@ -56,7 +57,7 @@ function ProjectEntry({ project, index, open, onToggle }: { project: Architectur
   </details>;
 }
 
-export default function Architecture() {
+export default function Stack() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All projects");
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
@@ -79,8 +80,8 @@ export default function Architecture() {
     const title = document.title;
     const description = document.querySelector<HTMLMetaElement>('meta[name="description"]');
     const previous = description?.content;
-    document.title = "Architecture — how the projects work | tech by George";
-    if (description) description.content = "Explore 14 projects from interface to hardware: plain-language stacks, technical details, data flows and linked tools, reviewed against current source.";
+    document.title = "Stack — My Toolkit | tech by George";
+    if (description) description.content = "George’s toolkit: 14 source-reviewed project stacks, plain-language technical details, and the tools he uses for general IT support.";
     if (!window.location.hash) window.scrollTo(0, 0);
     const openAnchor = () => {
       const slug = window.location.hash.slice(1);
@@ -99,7 +100,7 @@ export default function Architecture() {
     <header className="arch-header"><div className="arch-container arch-header-inner"><Link href="/" aria-label="Tech by George home"><Wordmark size="1.25rem" /></Link><nav aria-label="Site navigation"><Link href="/">All projects</Link><Link href="/how-i-can-help">How I can help you</Link><ThemeToggle /></nav></div></header>
     <main>
       <section className="arch-container arch-hero" aria-labelledby="architecture-title">
-        <div className="arch-hero-copy"><p className="arch-eyebrow"><Layers3 size={15} /> Field guide / Architecture</p><h1 id="architecture-title">What’s behind<br />the <em>interface.</em></h1><p className="arch-intro">The tools, the connections, and the decisions that make these projects work. From the screen in your hand to the servers underneath.</p><div className="arch-hero-actions"><a href="#project-stacks" className="arch-button arch-button-primary">Explore {architectureProjects.length} project stacks <ArrowDown size={16} /></a><a href="#tool-directory" className="arch-text-link">Tool directory <ArrowRight size={15} /></a></div><div className="arch-review"><span className="arch-review-dot" /> Source-reviewed snapshot <span>· {REVIEWED_DATE}</span></div></div>
+        <div className="arch-hero-copy"><p className="arch-eyebrow"><Layers3 size={15} /> My Toolkit / Stack</p><h1 id="architecture-title">What’s behind<br />the <em>interface.</em></h1><p className="arch-intro">The tools, the connections, and the decisions that make these projects work. From the screen in your hand to the servers underneath—and the toolkit I use for everyday IT support.</p><div className="arch-hero-actions"><a href="#project-stacks" className="arch-button arch-button-primary">Explore {architectureProjects.length} project stacks <ArrowDown size={16} /></a><a href="#support-toolkit" className="arch-text-link">IT support toolkit</a><a href="#tool-directory" className="arch-text-link">Project tool directory <ArrowRight size={15} /></a></div><div className="arch-review"><span className="arch-review-dot" /> Source-reviewed project snapshot <span>· {REVIEWED_DATE}</span></div></div>
         <div className="arch-diagram"><div className="arch-diagram-label"><span>A system, in six layers</span><span>UI ↓ HARDWARE</span></div><ol>{layerNames.map((name, i) => <li key={name}><span>{String(i + 1).padStart(2, "0")}</span><strong>{name}</strong><span className="arch-diagram-mark" aria-hidden="true">{i === 5 ? "▪" : "↓"}</span></li>)}</ol><p>The layers explain responsibilities. They are not six sequential network hops.</p></div>
       </section>
 
@@ -115,7 +116,14 @@ export default function Architecture() {
         {unreviewed.length > 0 && <aside className="arch-pending"><h3>New in the catalog · architecture review pending</h3><p>These entries do not inherit a guessed stack.</p>{unreviewed.map((project) => <a href={project.url} key={project.id} target="_blank" rel="noopener noreferrer">{project.title} ↗</a>)}</aside>}
       </section>
 
-      <section id="tool-directory" className="arch-directory"><div className="arch-container"><div className="arch-section-heading"><div><p className="arch-eyebrow">03 / Tools, translated</p><h2>A name. A job. A link.</h2></div><p>Official documentation, plain-English roles,<br className="arch-desktop-break" /> and the projects where each tool appears.</p></div><details className="arch-glossary" open={query.length > 0 ? true : undefined}><summary><span>Browse the tool directory <span className="arch-muted">({matchingTools.length} tools{query && " matching your search"})</span></span><ChevronDown size={20} /></summary><div className="arch-tool-grid">{matchingTools.map((tool) => {
+      <section id="support-toolkit" className="arch-container arch-support-section" aria-labelledby="support-heading">
+        <div className="arch-section-heading"><div><p className="arch-eyebrow">03 / Beyond the projects</p><h2 id="support-heading">General IT support toolkit.</h2></div><p>The tools I use to help people,<br className="arch-desktop-break" /> coordinate work and keep services running.</p></div>
+        <p className="arch-support-intro">These sit beside my project stacks: remote support, communication, scheduling, productivity and the practical work of running IT services.</p>
+        <div className="arch-support-grid">{supportTools.map((tool) => <article key={tool.id} id={`support-${tool.id}`}><p className="arch-eyebrow">{tool.role}</p><h3><a href={tool.url} target="_blank" rel="noopener noreferrer">{tool.name}<ArrowUpRight size={18} aria-hidden="true" /></a></h3><p>{tool.description}</p></article>)}</div>
+        <p className="arch-small">This is my general support toolkit, not a list of dependencies used by every project. Links go to official sites or repositories, not private service instances; no specific hosting setup or integration is implied.</p>
+      </section>
+
+      <section id="tool-directory" className="arch-directory"><div className="arch-container"><div className="arch-section-heading"><div><p className="arch-eyebrow">04 / Project tools, translated</p><h2>A name. A job. A link.</h2></div><p>Official documentation, plain-English roles,<br className="arch-desktop-break" /> and the projects where each tool appears.</p></div><details className="arch-glossary" open={query.length > 0 ? true : undefined}><summary><span>Browse the tool directory <span className="arch-muted">({matchingTools.length} tools{query && " matching your search"})</span></span><ChevronDown size={20} /></summary><div className="arch-tool-grid">{matchingTools.map((tool) => {
           const usedBy = architectureProjects.filter((project) => projectTools(project).includes(tool.id));
           return <article key={tool.id} id={`tool-${tool.id}`}><p className="arch-eyebrow">{tool.group}</p><h3><a href={tool.url} target="_blank" rel="noopener noreferrer">{tool.name}<ArrowUpRight size={15} /></a></h3><p>{tool.description}</p><div className="arch-used-by">{usedBy.map((project) => <a key={project.slug} href={`#${project.slug}`}>{project.name}</a>)}</div></article>;
         })}</div>{matchingTools.length === 0 && <p className="arch-empty">No tools match the search.</p>}</details><p className="arch-small arch-directory-note">“Used in a project” includes documented conditional connections and observed measurement scripts. Check that project’s notes before assuming a provider is active.</p></div></section>

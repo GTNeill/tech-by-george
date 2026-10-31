@@ -1,12 +1,12 @@
 import { lazy, Suspense } from "react";
-import { Route, Switch } from "wouter";
+import { Redirect, Route, Switch } from "wouter";
 import Index from "./pages/index";
 import Help from "./pages/help";
 import Admin from "./pages/admin";
 import { Provider } from "./components/provider";
 import { MadeWithRunable } from "./components/made-with-runable";
 
-const Architecture = lazy(() => import("./pages/architecture"));
+const Stack = lazy(() => import("./pages/architecture"));
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
       <Switch>
         <Route path="/" component={Index} />
         <Route path="/how-i-can-help" component={Help} />
-        <Route path="/architecture" component={Architecture} />
+        <Route path="/stack" component={Stack} />
+        <Route path="/architecture"><Redirect to={`/stack${window.location.search}${window.location.hash}`} replace /></Route>
         <Route path="/admin" component={Admin} />
       </Switch>
       </Suspense>

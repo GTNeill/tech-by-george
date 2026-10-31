@@ -20,7 +20,8 @@
 - [x] Responsive checks: 320/390/768/1024/1440px, dark/light, collapsed/expanded, no horizontal overflow or page errors.
 - [x] Live-catalog comparison: new IDs flagged without guessed stacks; API failure retains reviewed content.
 - [x] Official link checks: 69 HTTP successes; official Chicago/Cook election sites return automated-request 403, not broken destinations.
-- [ ] Commit/push preserving remote changes; deliver running website.
+- [x] Commit/push preserving remote changes: 2d7b051 pushed to main.
+- [ ] Deliver running website.
 
 ## Guardrails
 - Never present template scaffolding or installed-but-unused dependencies as live capabilities.
@@ -37,3 +38,18 @@
 - All public sites checked 2026-10-31; do not claim end-to-end authenticated production tests.
 - Supporting RustDesk sources reviewed: CortenDesk bundles rendezvous/relay separately, RDGen generates custom clients; active VPS provider not established.
 - Architecture route is lazy-loaded; existing main-bundle size warning remains, no additional main-bundle inventory payload.
+- Production check after push still served the previous browser bundle (no Architecture chunk); do not claim production deployment complete.
+- GitHub push reported 55 dependency alerts (16 high, 30 moderate, 9 low). No dependency changes/security remediation were in scope.
+
+## Follow-up: My Toolkit / Stack
+- Approved with adjustments: rename Home/Help button to My Toolkit, remove its arrow, canonical route `/stack`, then post changes.
+- Retain original requested separate general IT support toolkit and larger content text; preserve existing branding.
+- [x] Re-read current source and document updated design before implementation.
+- [x] Add 11 support tools (RustDesk/CortenDesk shown separately), official links and role descriptions in separate data.
+- [x] Update route/title/navigation, retain legacy route/hash redirect, increase scoped typography.
+- [x] Lint/build/browser regression including typography, support-tool completeness and responsive reflow.
+- Official support links: 9 HTTP 200; Jitsi and Ko-fi return automated-request HTTP 403. Retained verified official destinations.
+- Browser checks pass at 320–2560px, including both themes, expanded stacks, open directory, legacy query/hash redirect and no page errors. Body text 18px, supporting text 15px, compact links 14px.
+- Build/typecheck and lint pass; existing main-bundle size/deprecation warnings remain.
+- Dev server restarted because Vite served a stale cached app route after source update; fresh server uses current routes.
+- [ ] Commit/push preserving remote changes, deliver preview, check production bundle separately.

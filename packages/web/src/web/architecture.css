@@ -1,4 +1,4 @@
-.architecture-page { background: var(--background); color: var(--foreground); font-family: 'IBM Plex Sans', sans-serif; }
+.architecture-page { background: var(--background); color: var(--foreground); font-family: 'IBM Plex Sans', sans-serif; font-size: 18px; line-height: 1.65; }
 .architecture-page h1, .architecture-page h2, .architecture-page h3, .architecture-page h4 { font-family: 'Bricolage Grotesque', sans-serif; }
 .architecture-page a, .architecture-page button, .architecture-page input, .architecture-page summary { outline-offset: 5px; }
 .architecture-page :focus-visible { outline: 2px solid var(--accent); }
@@ -132,6 +132,37 @@
 .arch-footer p { color: var(--muted-foreground); font-size: 12px; }
 .arch-footer nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 22px; }
 .arch-footer nav a { display: flex; align-items: center; gap: 7px; font-size: 11px; }
+
+/* Readable technical content on high-resolution displays; scoped to this guide. */
+.arch-header nav, .arch-eyebrow, .arch-button, .arch-text-link, .arch-review,
+.arch-diagram-label, .arch-diagram li > span:first-child, .arch-diagram > p,
+.arch-small, .arch-layer-index, .arch-categories button, .arch-bulk,
+.arch-results-line, .arch-number, .arch-disclosure, .arch-project-toolbar,
+.arch-evidence, .arch-evidence summary, .arch-muted, .arch-footer p,
+.arch-footer nav a { font-size: 15px; }
+.arch-stack p, .arch-section-intro, .arch-workbench > p:not(.arch-eyebrow),
+.arch-section-heading > p, .arch-project-purpose, .arch-flow p, .arch-notes,
+.arch-pending p, .arch-tool-grid article > p:not(.arch-eyebrow),
+.arch-method > div p, .arch-search input, .arch-glossary > summary { font-size: 18px; }
+.arch-tools a, .arch-used-by a { font-size: 14px; }
+.arch-stack h3, .arch-stack h4, .arch-diagram li strong { font-size: 20px; }
+.arch-tool-grid h3 { font-size: 24px; }
+.arch-flow li { grid-template-columns: 28px minmax(0, 1fr); }
+.arch-flow li > span { width: 27px; height: 27px; font-size: 14px; }
+.arch-stack > li { grid-template-columns: 30px minmax(0, 1fr); }
+.arch-eyebrow { letter-spacing: .06em; }
+.arch-detail-grid > *, .arch-overview-grid > *, .arch-hero > *, .arch-project-heading { min-width: 0; }
+.arch-diagram-label { flex-wrap: wrap; line-height: 1.6; }
+.arch-diagram > p { max-width: none; }
+.arch-project-toolbar a, .arch-evidence a, .arch-tool-grid h3 a { overflow-wrap: anywhere; }
+.arch-support-section { padding-block: 64px 78px; border-top: 1px solid var(--border); scroll-margin-top: 25px; }
+.arch-support-intro { max-width: 760px; margin-top: 26px; color: var(--muted-foreground); }
+.arch-support-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; margin-top: 34px; border-top: 1px solid var(--border); }
+.arch-support-grid article { padding-block: 26px; border-bottom: 1px solid var(--border); min-width: 0; scroll-margin-top: 25px; }
+.arch-support-grid h3 { font-size: 26px; font-weight: 600; letter-spacing: -.02em; margin-top: 8px; }
+.arch-support-grid h3 a { display: inline-flex; align-items: center; gap: 12px; }
+.arch-support-grid article > p:not(.arch-eyebrow) { margin-top: 12px; color: var(--muted-foreground); font-size: 18px; line-height: 1.75; max-width: 52ch; }
+.arch-support-grid svg, .arch-hero-actions svg, .arch-tools svg, .arch-header nav button { flex-shrink: 0; }
 @media (max-width: 960px) {
  .arch-hero { gap: 35px; padding-block: 65px; }
  .arch-overview-grid { gap: 40px; }
@@ -143,11 +174,11 @@
 @media (max-width: 680px) {
  .arch-container { width: calc(100% - 36px); }
  .arch-header-inner { padding-block: 17px; gap: 18px; flex-wrap: wrap; }
- .arch-header nav { gap: 17px; font-size: 11px; width: 100%; justify-content: space-between; }
+ .arch-header nav { gap: 12px; font-size: 15px; width: 100%; justify-content: space-between; flex-wrap: wrap; }
  .arch-header nav button { margin-left: auto; }
  .arch-hero { grid-template-columns: 1fr; gap: 36px; padding-block: 45px; }
  .arch-hero h1 { font-size: 53px; }
- .arch-intro { font-size: 16px; }
+ .arch-intro { font-size: 18px; }
  .arch-review { margin-top: 24px; }
  .arch-diagram { padding: 18px; }
  .arch-overview-grid { grid-template-columns: 1fr; gap: 36px; padding-block: 45px; }
@@ -156,17 +187,17 @@
  .arch-desktop-break { display: none; }
  .arch-project-section { padding-block: 48px; }
  .arch-search { padding: 15px 12px; gap: 10px; }
- .arch-search input { font-size: 12px; }
+ .arch-search input { font-size: 18px; }
  .arch-filter-bottom { padding: 10px; }
  .arch-categories { gap: 2px; }
- .arch-categories button { padding: 8px 7px; font-size: 10px; }
+ .arch-categories button { padding: 8px 7px; font-size: 15px; }
  .arch-categories > svg { display: none; }
  .arch-bulk { gap: 12px; padding-left: 7px; }
  .arch-results-line > span { display: none; }
  .arch-project > summary { grid-template-columns: 22px 1fr 20px; padding: 22px 0; gap: 12px; }
- .arch-number { font-size: 10px; }
+ .arch-number { font-size: 15px; }
  .arch-project-heading h3 { font-size: 21px; }
- .arch-project-purpose { font-size: 12px; }
+ .arch-project-purpose { font-size: 18px; }
  .arch-disclosure { margin-left: 0; }
  .arch-disclosure > span { display: none; }
  .arch-project-body { padding: 0 12px 27px; }
@@ -175,8 +206,10 @@
  .arch-explainer { border-top: 1px solid var(--border); padding-top: 25px; }
  .arch-directory { padding-block: 45px; }
  .arch-tool-grid { grid-template-columns: 1fr; }
- .arch-glossary > summary { padding: 17px 13px; font-size: 13px; }
+ .arch-glossary > summary { padding: 17px 13px; font-size: 18px; }
  .arch-glossary > summary > span > span { display: block; margin-top: 4px; }
+ .arch-support-section { padding-block: 45px; }
+ .arch-support-grid { grid-template-columns: 1fr; }
  .arch-method { padding-block: 45px; }
  .arch-method > div { grid-template-columns: 1fr; gap: 20px; }
  .arch-footer nav { gap: 15px 22px; }

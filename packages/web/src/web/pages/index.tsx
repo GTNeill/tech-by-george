@@ -151,9 +151,8 @@ function Index() {
               {projects.isLoading ? "Loading" : `${items.length} live projects`}
             </span>
             <span className="h-px flex-1 bg-border" />
-            <Link href="/architecture" className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-xs text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto">
-              Architecture
-              <ArrowRight className="size-4" />
+            <Link href="/stack" className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-xs text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto">
+              My Toolkit
             </Link>
             <Link href="/how-i-can-help" className={`${HELP_BUTTON} w-full sm:w-auto`}>
               How I can help you

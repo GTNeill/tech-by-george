@@ -23,7 +23,7 @@ export function Footer() {
             <div className="lg:col-span-3 lg:col-start-7">
               <p className="label">On this page</p>
               <ul className="mt-4 flex flex-col gap-2.5">
-                <li><a href="/architecture" className="text-[0.93rem] text-[var(--accent)] transition-colors hover:underline">Project architecture ↗</a></li>
+                <li><a href="/stack" className="text-[0.93rem] text-[var(--accent)] transition-colors hover:underline">My Toolkit</a></li>
                 {nav.map((n) => (
                   <li key={n.id}>
                     <a
