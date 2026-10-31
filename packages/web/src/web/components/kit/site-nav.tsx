@@ -78,6 +78,9 @@ export function SiteNav() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 md:ml-0">
+          <Link href="/architecture" className="label rounded-[3px] border border-[var(--border)] px-2.5 py-1.5 transition-colors hover:text-[var(--accent)]">
+            Architecture
+          </Link>
           <Link
             href="/"
             className="label rounded-[3px] px-2.5 py-1.5 transition-colors hover:text-[var(--accent)]"

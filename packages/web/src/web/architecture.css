@@ -1,0 +1,189 @@
+.architecture-page { background: var(--background); color: var(--foreground); font-family: 'IBM Plex Sans', sans-serif; }
+.architecture-page h1, .architecture-page h2, .architecture-page h3, .architecture-page h4 { font-family: 'Bricolage Grotesque', sans-serif; }
+.architecture-page a, .architecture-page button, .architecture-page input, .architecture-page summary { outline-offset: 5px; }
+.architecture-page :focus-visible { outline: 2px solid var(--accent); }
+.arch-container { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+.arch-header { border-bottom: 1px solid var(--border); }
+.arch-header-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 22px; gap: 24px; }
+.arch-header nav { display: flex; align-items: center; gap: 26px; font-size: 13px; }
+.arch-header nav > a { color: var(--muted-foreground); }
+.architecture-page a:hover { color: var(--accent); }
+.arch-hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: center; padding-block: 90px 86px; }
+.arch-eyebrow { display: flex; align-items: center; gap: 9px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: .11em; line-height: 1.6; color: var(--muted-foreground); }
+.arch-hero .arch-eyebrow { color: var(--accent); }
+.arch-hero h1 { margin-top: 23px; font-size: clamp(45px, 5.7vw, 73px); font-weight: 700; letter-spacing: -.055em; line-height: 1.03; }
+.arch-hero h1 em { color: var(--accent); font-weight: 500; }
+.arch-intro { max-width: 470px; margin-top: 26px; color: var(--muted-foreground); font-size: 18px; line-height: 1.65; }
+.arch-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 32px; }
+.arch-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 18px; border: 1px solid var(--border); border-radius: 4px; font-size: 12px; font-weight: 500; cursor: pointer; }
+.arch-button-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.architecture-page .arch-button-primary:hover { color: #fff; filter: brightness(1.08); }
+.arch-text-link { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; }
+.arch-review { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; color: var(--muted-foreground); font-size: 10px; margin-top: 30px; }
+.arch-review-dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; margin-right: 2px; }
+.arch-diagram { border: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 85%, transparent); padding: 22px; position: relative; }
+.arch-diagram::before { content: ''; position: absolute; width: 36px; height: 3px; background: var(--accent); top: -2px; left: 22px; }
+.arch-diagram-label { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 16px; color: var(--muted-foreground); font: 9px 'IBM Plex Mono', monospace; letter-spacing: .03em; text-transform: uppercase; }
+.arch-diagram li { display: flex; align-items: center; gap: 18px; padding: 15px 13px; margin-top: 5px; background: var(--surface-2); border-left: 2px solid color-mix(in srgb, var(--accent) 55%, transparent); }
+.arch-diagram li:first-child { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 9%, var(--surface)); }
+.arch-diagram li:last-child { background: transparent; border: 1px dashed var(--border); border-left: 2px solid var(--muted-foreground); }
+.arch-diagram li > span:first-child { font: 10px 'IBM Plex Mono', monospace; color: var(--muted-foreground); }
+.arch-diagram li strong { font-size: 13px; font-weight: 500; }
+.arch-diagram-mark { margin-left: auto; color: var(--accent); font-size: 13px; }
+.arch-diagram > p { color: var(--muted-foreground); font-size: 11px; line-height: 1.6; margin-top: 18px; max-width: 340px; }
+.arch-overview { border-block: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 45%, transparent); }
+.arch-overview-grid { display: grid; grid-template-columns: 1fr 1.25fr; gap: 85px; padding-block: 68px; }
+.architecture-page h2 { font-size: clamp(28px, 3.3vw, 40px); line-height: 1.12; letter-spacing: -.04em; font-weight: 600; }
+.arch-overview h2 { margin-top: 16px; }
+.arch-section-intro { color: var(--muted-foreground); font-size: 15px; line-height: 1.8; margin-top: 22px; max-width: 400px; }
+.arch-workbench { margin-top: 34px; border-left: 2px solid var(--accent); padding: 4px 0 4px 20px; }
+.arch-workbench h3 { margin-top: 8px; font-size: 23px; letter-spacing: -.03em; }
+.arch-workbench > p:not(.arch-eyebrow) { color: var(--muted-foreground); font-size: 13px; line-height: 1.8; margin-top: 12px; }
+.arch-small { color: var(--muted-foreground); font-size: 11px; line-height: 1.75; margin-top: 20px; }
+.arch-stack { list-style: none; padding: 0; margin: 0; }
+.arch-stack > li { display: grid; grid-template-columns: 26px 1fr; gap: 17px; padding: 21px 0; border-bottom: 1px solid var(--border); }
+.arch-stack > li:first-child { padding-top: 0; }
+.arch-stack > li:last-child { border-bottom: 0; padding-bottom: 0; }
+.arch-layer-index { color: var(--accent); font: 10px 'IBM Plex Mono', monospace; padding-top: 5px; }
+.arch-stack h3, .arch-stack h4 { font-size: 17px; font-weight: 600; letter-spacing: -.015em; }
+.arch-stack p { color: var(--muted-foreground); font-size: 13px; line-height: 1.75; margin-top: 7px; }
+.arch-tools { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 11px; }
+.arch-tools a { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; padding: 4px 7px; border: 1px solid var(--border); background: var(--surface); border-radius: 3px; }
+.arch-tools a:hover { border-color: var(--accent); }
+.arch-project-section { padding-block: 78px; scroll-margin-top: 25px; }
+.arch-section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; }
+.arch-section-heading h2 { margin-top: 13px; }
+.arch-section-heading > p { color: var(--muted-foreground); font-size: 13px; line-height: 1.7; }
+.arch-filter { margin-top: 35px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); }
+.arch-search { display: flex; align-items: center; gap: 14px; padding: 16px 20px; color: var(--muted-foreground); border-bottom: 1px solid var(--border); }
+.arch-search input { width: 100%; border: 0; background: transparent; color: var(--foreground); font-size: 14px; min-width: 0; }
+.arch-search input::placeholder { color: var(--muted-foreground); opacity: .8; }
+.arch-filter-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 14px; padding: 12px 16px; }
+.arch-categories { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+.arch-categories > svg { color: var(--muted-foreground); margin-right: 8px; }
+.arch-categories button { padding: 6px 10px; font-size: 11px; border-radius: 3px; cursor: pointer; color: var(--muted-foreground); }
+.arch-categories button[aria-pressed=true] { background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent); }
+.arch-bulk { display: flex; gap: 9px; align-items: center; font-size: 10px; color: var(--muted-foreground); }
+.arch-bulk button { cursor: pointer; padding-block: 5px; }
+.arch-bulk button:hover { color: var(--foreground); }
+.arch-results-line { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-block: 21px 12px; font: 9px 'IBM Plex Mono', monospace; color: var(--muted-foreground); line-height: 1.6; }
+.arch-results-line > span { letter-spacing: .05em; }
+.arch-project-list { border-top: 1px solid var(--border); }
+.arch-project { border-bottom: 1px solid var(--border); scroll-margin-top: 25px; }
+.arch-project > summary { display: grid; grid-template-columns: 45px 1fr auto; gap: 18px; align-items: center; padding: 25px 8px; cursor: pointer; list-style: none; }
+.arch-project summary::-webkit-details-marker, .arch-glossary summary::-webkit-details-marker { display: none; }
+.arch-project > summary:hover { background: color-mix(in srgb, var(--surface) 65%, transparent); }
+.arch-number { color: var(--muted-foreground); font: 13px 'IBM Plex Mono', monospace; align-self: start; padding-top: 23px; }
+.arch-project-heading h3 { font-size: 23px; font-weight: 600; letter-spacing: -.025em; line-height: 1.25; margin-top: 5px; }
+.arch-project-purpose { display: block; color: var(--muted-foreground); font-size: 12px; line-height: 1.65; margin-top: 8px; max-width: 720px; }
+.arch-disclosure { display: flex; align-items: center; gap: 13px; margin-left: 16px; font: 10px 'IBM Plex Mono', monospace; color: var(--muted-foreground); white-space: nowrap; }
+.arch-project[open] > summary .arch-disclosure svg { transform: rotate(180deg); color: var(--accent); }
+.arch-project[open] > summary .arch-number { color: var(--accent); }
+.arch-project[open] { background: color-mix(in srgb, var(--surface) 35%, transparent); }
+.arch-project-body { padding: 0 24px 35px 71px; }
+.arch-project-toolbar { display: flex; flex-wrap: wrap; gap: 14px 22px; padding: 8px 0 22px; border-bottom: 1px solid var(--border); font-size: 11px; }
+.arch-project-toolbar a { display: flex; align-items: center; gap: 6px; color: var(--accent); }
+.arch-project-toolbar > span { margin-left: auto; color: var(--muted-foreground); }
+.arch-detail-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; margin-top: 26px; }
+.arch-subheading { margin-bottom: 22px; }
+.arch-project-stack > li { padding-block: 19px; }
+.arch-project-stack > li:first-child { padding-top: 0; }
+.arch-project-stack > li:last-child { padding: 17px; border: 1px dashed var(--border); margin-top: 18px; }
+.arch-project-stack > li:last-child .arch-layer-index { color: var(--muted-foreground); }
+.arch-explainer > section { margin-bottom: 27px; }
+.arch-flow { margin-top: 16px; }
+.arch-flow li { display: grid; grid-template-columns: 23px 1fr; gap: 12px; padding-bottom: 18px; }
+.arch-flow li > span { width: 22px; height: 22px; display: grid; place-items: center; border: 1px solid var(--border); color: var(--accent); font: 10px 'IBM Plex Mono', monospace; border-radius: 50%; }
+.arch-flow p, .arch-notes { font-size: 13px; line-height: 1.75; color: var(--muted-foreground); }
+.arch-notes { padding-left: 17px; list-style: disc; margin-top: 13px; }
+.arch-notes li { padding-left: 2px; margin-bottom: 12px; }
+.arch-notes li::marker { color: var(--accent); }
+.arch-evidence { border-top: 1px solid var(--border); padding-top: 15px; color: var(--muted-foreground); font-size: 11px; line-height: 1.75; }
+.arch-evidence summary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 12px; color: var(--foreground); }
+.arch-evidence p { margin-top: 14px; }
+.arch-evidence ul { padding-left: 16px; list-style: disc; margin-top: 12px; overflow-wrap: anywhere; }
+.arch-commit code { color: var(--accent); }
+.arch-empty { padding: 45px 24px; text-align: center; color: var(--muted-foreground); }
+.arch-empty h3 { font-size: 22px; color: var(--foreground); }
+.arch-empty p { margin-top: 10px; }
+.arch-empty button { margin-top: 20px; }
+.arch-pending { margin-top: 28px; border-left: 2px solid var(--accent); padding: 20px; background: var(--surface); }
+.arch-pending p { margin-top: 8px; color: var(--muted-foreground); font-size: 13px; }
+.arch-pending a { display: inline-block; margin: 15px 20px 0 0; color: var(--accent); }
+.arch-directory { padding-block: 64px; border-block: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 45%, transparent); scroll-margin-top: 25px; }
+.arch-glossary { margin-top: 30px; border: 1px solid var(--border); }
+.arch-glossary > summary { display: flex; justify-content: space-between; gap: 20px; padding: 20px; cursor: pointer; font-size: 14px; list-style: none; }
+.arch-glossary[open] > summary > svg { transform: rotate(180deg); }
+.arch-muted { color: var(--muted-foreground); font-size: 12px; }
+.arch-tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--border); }
+.arch-tool-grid article { padding: 24px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-width: 0; }
+.arch-tool-grid h3 { margin-top: 10px; font-size: 19px; font-weight: 500; letter-spacing: -.02em; }
+.arch-tool-grid h3 a { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.arch-tool-grid article > p:not(.arch-eyebrow) { margin-top: 13px; color: var(--muted-foreground); font-size: 12px; line-height: 1.8; }
+.arch-used-by { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 18px; }
+.arch-used-by a { font-size: 10px; color: var(--muted-foreground); text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+.arch-directory-note { max-width: 800px; }
+.arch-method { padding-block: 62px; }
+.arch-method h2 { margin-top: 13px; font-size: 30px; }
+.arch-method > div { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; margin-top: 24px; }
+.arch-method > div p { color: var(--muted-foreground); font-size: 13px; line-height: 1.85; }
+.arch-footer { border-top: 1px solid var(--border); padding-block: 35px 70px; }
+.arch-footer .arch-container { display: flex; align-items: center; gap: 25px; flex-wrap: wrap; }
+.arch-footer p { color: var(--muted-foreground); font-size: 12px; }
+.arch-footer nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 22px; }
+.arch-footer nav a { display: flex; align-items: center; gap: 7px; font-size: 11px; }
+@media (max-width: 960px) {
+ .arch-hero { gap: 35px; padding-block: 65px; }
+ .arch-overview-grid { gap: 40px; }
+ .arch-detail-grid { gap: 28px; }
+ .arch-project-body { padding-left: 25px; }
+ .arch-tool-grid { grid-template-columns: repeat(2, 1fr); }
+ .arch-footer nav { margin-left: 0; width: 100%; }
+}
+@media (max-width: 680px) {
+ .arch-container { width: calc(100% - 36px); }
+ .arch-header-inner { padding-block: 17px; gap: 18px; flex-wrap: wrap; }
+ .arch-header nav { gap: 17px; font-size: 11px; width: 100%; justify-content: space-between; }
+ .arch-header nav button { margin-left: auto; }
+ .arch-hero { grid-template-columns: 1fr; gap: 36px; padding-block: 45px; }
+ .arch-hero h1 { font-size: 53px; }
+ .arch-intro { font-size: 16px; }
+ .arch-review { margin-top: 24px; }
+ .arch-diagram { padding: 18px; }
+ .arch-overview-grid { grid-template-columns: 1fr; gap: 36px; padding-block: 45px; }
+ .arch-section-heading { display: block; }
+ .arch-section-heading > p { margin-top: 17px; }
+ .arch-desktop-break { display: none; }
+ .arch-project-section { padding-block: 48px; }
+ .arch-search { padding: 15px 12px; gap: 10px; }
+ .arch-search input { font-size: 12px; }
+ .arch-filter-bottom { padding: 10px; }
+ .arch-categories { gap: 2px; }
+ .arch-categories button { padding: 8px 7px; font-size: 10px; }
+ .arch-categories > svg { display: none; }
+ .arch-bulk { gap: 12px; padding-left: 7px; }
+ .arch-results-line > span { display: none; }
+ .arch-project > summary { grid-template-columns: 22px 1fr 20px; padding: 22px 0; gap: 12px; }
+ .arch-number { font-size: 10px; }
+ .arch-project-heading h3 { font-size: 21px; }
+ .arch-project-purpose { font-size: 12px; }
+ .arch-disclosure { margin-left: 0; }
+ .arch-disclosure > span { display: none; }
+ .arch-project-body { padding: 0 12px 27px; }
+ .arch-project-toolbar > span { margin-left: 0; width: 100%; }
+ .arch-detail-grid { grid-template-columns: 1fr; gap: 32px; }
+ .arch-explainer { border-top: 1px solid var(--border); padding-top: 25px; }
+ .arch-directory { padding-block: 45px; }
+ .arch-tool-grid { grid-template-columns: 1fr; }
+ .arch-glossary > summary { padding: 17px 13px; font-size: 13px; }
+ .arch-glossary > summary > span > span { display: block; margin-top: 4px; }
+ .arch-method { padding-block: 45px; }
+ .arch-method > div { grid-template-columns: 1fr; gap: 20px; }
+ .arch-footer nav { gap: 15px 22px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+ .arch-hero-copy, .arch-diagram { animation: arch-enter .5s ease both; }
+ .arch-diagram { animation-delay: .08s; }
+ @keyframes arch-enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media print { .arch-header nav, .arch-filter, .arch-bulk { display: none; } .arch-hero, .arch-overview-grid, .arch-detail-grid { display: block; } .arch-diagram { margin-top: 25px; } }

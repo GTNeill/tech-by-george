@@ -38,11 +38,21 @@ Loaded from Google Fonts in `packages/web/index.html`.
 
 1. Visitor opens `/` → sees visible projects newest-order-first → clicks a title (opens in new tab) or copies the link to share.
 2. George opens `/admin` → signs in with Google (allowlisted email) → edits a description, hides an item, reorders, hits refresh on a stale screenshot → `/` updates immediately.
-3. Screenshots: server captures the URL through a screenshot service, stores the PNG in Tigris, and serves it from `/api/shot/:id` with long cache headers + a version query.
+3. Screenshots: server captures the URL through a screenshot service or accepts an admin upload, stores bytes on the instance filesystem, and serves them from `/api/shot/:id` with cache headers + a version query. Durable production storage requires a mounted volume.
 
 ## Architecture
 
-- API: oRPC procedures in `src/api/routes/projects.ts`; admin procedures use an `admin` middleware (Better Auth session + `ADMIN_EMAILS` allowlist). Plain HTTP route `/api/shot/:id` streams screenshot bytes from S3.
-- Auth: `@runablehq/managed-auth` (Google only).
-- DB: single `projects` table (Drizzle/Turso).
+- API: oRPC procedures in `src/api/routes/projects.ts`; admin procedures use an `admin` middleware (Better Auth session + `ADMIN_EMAILS` allowlist). Plain HTTP route `/api/shot/:id` serves filesystem screenshot bytes.
+- Auth: Better Auth with the site's own Google OAuth client (Google only).
+- DB: projects and site settings, plus auth tables (Drizzle/Turso).
 - Badge: custom "Made with Runable" pill at 50% opacity (100% on hover) → `https://runable.link/{VITE_REFERRAL_CODE ?? "gtn"}`.
+
+## Architecture page — approved extension
+
+`/architecture` is an engineering field guide, not a dashboard. Keep the existing graphite / warm-paper themes, Bricolage display type, Plex body and mono labels. Use a large editorial title beside a compact six-layer schematic; ordered horizontal bands place UI first and physical hardware last. The orange signal line links the layers visually without implying every request traverses them in order.
+
+Below the overview, a searchable project index uses full-width numbered disclosure rows rather than a generic card grid. Expanded rows pair a six-layer stack with a plain-language request flow, caveats, developer tools and dated source evidence. Tool names link to official documentation. A linked glossary completes the guide. Restrained hairlines, square-ish corners and generous section spacing keep dense technical material readable.
+
+The inventory is curated static TypeScript, separate from database-managed project content. Compare live project IDs to reviewed IDs to flag newly added projects awaiting review. Evidence labels separate source implementation, observed public behavior and configuration-dependent services. GitHub, TypeScript, Vite and Runable sit in a separate build/workbench block, not the runtime stack. Hosting configs are labeled deployment targets; hardware models remain explicitly unknown. No private infrastructure identifiers or raw private source are published.
+
+Navigation: a secondary outlined Architecture button beside the existing orange Home help CTA; Architecture links in Help navigation and footer. Architecture provides Home and How I can help you return links plus shared theme toggle. Direct project anchors open their disclosure. Search, category filters, expand/collapse and reduced-motion support are keyboard accessible. Route is lazy-loaded to keep the existing Home bundle lean.
