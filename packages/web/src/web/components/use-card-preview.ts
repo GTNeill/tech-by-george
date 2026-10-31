@@ -20,7 +20,7 @@ export function useCardPreview() {
     if (!window.matchMedia(desktopQuery).matches || !cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     anchor.current = rect;
-    const width = Math.min(Math.max(rect.width * 1.5, 640), 880, window.innerWidth - 32);
+    const width = Math.min(Math.min(Math.max(rect.width * 1.5, 640), 880) * 1.3, window.innerWidth - 32);
     setPreview({ mode, width, left: Math.max(16, Math.min(rect.left + rect.width / 2 - width / 2, window.innerWidth - width - 16)), top: 16 });
   };
   const enterCard = (event: PointerEvent<HTMLElement>) => {

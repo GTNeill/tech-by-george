@@ -66,3 +66,11 @@
 - Preview uses existing screenshots (including pre-existing photography browser-check screenshot), not a live embedded site.
 - User now explicitly requested pushing changes to GitHub and checking the live site.
 - Pre-push verification: lint/build and Home hover browser tests pass; remote main has no newer commits. Commit/push and production verification follow.
+- [x] Pushed hover zoom to GitHub main: `62b6856`.
+- [x] Checked live Home after push: HTTP 200, bundle `index-kDk4tNak.js` includes My Toolkit but not hover-preview markers. Browser has zero zoom-enabled cards and no page errors. Hover zoom is not yet deployed; do not claim it is live.
+
+## Hover zoom: another 30% larger
+- [x] User requested increasing the approved preview size another 30%.
+- [x] Width target multiplied by 1.3 before viewport clamp; screenshot height allowance and preview text/spacing increased by 30%. Existing cards unchanged.
+- [x] Lint/typecheck/build and hover browser regression pass, including exact width scaling, keyboard, Copy/live links, mobile, reduced motion and bounds in both themes.
+- [x] Visually inspected enlarged preview; change available in running preview, not yet pushed.
