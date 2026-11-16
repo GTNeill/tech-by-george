@@ -24,6 +24,7 @@ export function Footer() {
               <p className="label">On this page</p>
               <ul className="mt-4 flex flex-col gap-2.5">
                 <li><a href="/stack" className="text-[0.93rem] text-[var(--accent)] transition-colors hover:underline">My Toolkit</a></li>
+                <li><a href="/connections" className="text-[0.93rem] text-[var(--accent)] transition-colors hover:underline">Community Connections</a></li>
                 {nav.map((n) => (
                   <li key={n.id}>
                     <a

@@ -154,6 +154,9 @@ function Index() {
             <Link href="/stack" className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-xs text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto">
               My Toolkit
             </Link>
+            <Link href="/connections" className="inline-flex w-full items-center justify-center rounded-lg border border-border px-5 py-3 font-mono text-xs text-foreground transition-colors hover:border-accent hover:text-accent sm:w-auto">
+              Community Connections
+            </Link>
             <Link href="/how-i-can-help" className={`${HELP_BUTTON} w-full sm:w-auto`}>
               How I can help you
               <ArrowRight className="size-4" />

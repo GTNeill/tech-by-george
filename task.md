@@ -74,3 +74,22 @@
 - [x] Width target multiplied by 1.3 before viewport clamp; screenshot height allowance and preview text/spacing increased by 30%. Existing cards unchanged.
 - [x] Lint/typecheck/build and hover browser regression pass, including exact width scaling, keyboard, Copy/live links, mobile, reduced motion and bounds in both themes.
 - [x] Visually inspected enlarged preview; change available in running preview, not yet pushed.
+
+## Community Connections
+- [x] Approved `/connections` with five profiles, website-grounded descriptions, source links, Home/Help navigation and existing readable branding.
+- [x] Scope: mostly US / Chicago-area discovery. Show related shortlist before adding it; do not add discovered organizations yet.
+- [x] Read official sources: Chamber About; Weave Trust Index and organization Home; Relational Builder browser-rendered homepage; NIFI About browser-rendered; Rank the Vote strategy browser-rendered.
+- Important distinctions: Weave’s Trust Index is a tool of its Aspen Institute project; Relational Builder is stewarded by Relational Tech Project; Rank the Vote now describes RCV, proportional representation, fair maps and open primaries.
+- Automated NIFI/Rank source requests returned 403 but browser reading succeeded. Do not imply user affiliation beyond their stated recent connections.
+- [x] Create static profiles and page, add Home and Help navigation; no discovered organizations in public data.
+- [x] Lint/typecheck/build pass; Connections, Home hover and Stack browser regressions pass. New page lazy chunk is 25.61KB / 5.59KB gzip; existing main-bundle size warning remains.
+- [x] Five profiles, 15 activities and 10 source links verified; body text 18px; jump links/title/theme/reduced motion/no errors; no overflow at 320–2560px in both themes, including Home/Help navigation.
+- [x] Visually inspected desktop hero, profile and mobile layout. Official link checks: 8 HTTP 200, 4 automated-request 403 (NIFI routes and Rank financials); retained valid official links. Browser source reading succeeded for NIFI About and Rank strategy.
+- Related shortlist researched from official sites: Chi Hack Night (Chicago civic-tech gathering), Alliance of Civic Technologists (national volunteer network; includes Chi Hack Night), Everyday Democracy (community dialogue/training), Code for America (human-centered public-service technology), City Bureau/Documenters (Chicago-origin civic reporting and participatory technology).
+- [x] Delivered five-profile preview and presented shortlist for approval before adding further organizations.
+- [x] User approved Chi Hack Night, Everyday Democracy, Code for America and Alliance of Civic Technologists; City Bureau / Documenters not selected.
+- [x] Added separate “More to explore” research-discovery section, eight official source links, practical starting points and a jump link; original five profiles unchanged.
+- [x] Updated affiliation note to distinguish recent connections from research discoveries. Preserved equity focus, public-service distinction and volunteer-network role.
+- [x] Lint/typecheck/build, diff checks and Connections/Home hover/Stack browser regressions pass. Both themes and 320–2560px checked; descriptions remain 18px. All eight new source URLs returned HTTP 200.
+- [x] Visually inspected desktop light and mobile dark discovery layouts. Connections lazy chunk now 33.60KB / 7.09KB gzip; existing main-bundle warning remains.
+- No commit/push requested; changes are preview-only. Updated website delivery follows.

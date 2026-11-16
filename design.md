@@ -72,3 +72,15 @@ On hover-capable desktop devices, a brief pointer pause enlarges a project card 
 Keyboard focus on a card shows the same visual enlargement without duplicating its focusable controls; original links and Copy remain operable. Touch devices keep existing cards and direct first-tap links. Preserve both themes, rounded catalog cards and brand fonts; skip preview animation for reduced motion. This is a Home-only component/style change, with no API/database or analytics changes.
 
 User refinement: enlarge the existing preview another 30%. Multiply its original width target (640–880px) by 1.3 (832–1144px), then clamp to viewport margins. Increase screenshot-height allowance from 52dvh to 67.6dvh and preview text/spacing by 1.3; retain the viewport height cap and internal scrolling. All hover, keyboard, touch and live-site link behavior stays unchanged.
+
+## Community Connections — approved page
+
+Add a lazy-loaded `/connections` editorial guide, using existing graphite / warm-paper themes, Bricolage display headings, Plex body and mono labels. Body text 18px, supporting text at least 15px. Large asymmetric hero and a compact three-part orientation (connection, technology, participation), followed by a jump index and five full-width numbered profiles with overview, activities, a practical starting point and official sources. No logos needed; no generic card grid or live external embeds.
+
+Profiles cover US Chamber of Connection; Weave: The Social Fabric Project and its Social Trust Index; Relational Technology Project and its Relational Builder; National Issues Forums Institute; Rank the Vote. Distinguish projects/tools from their stewarding organizations and descriptive overviews from advocacy claims. Preserve Rank the Vote’s broader election-reform work rather than reducing it to RCV. Note that these are organizations/projects George has connected with, not claimed partners or endorsements. Website summaries are paraphrased and dated November 16, 2026.
+
+Link from Home and Help navigation/footer. Keep themes, analytics, project cards and existing routes intact. Static curated data; no APIs or database changes. Research 3–5 related US organizations including Chicago civic tech, but present that shortlist to George for approval before adding any to the public page.
+
+### Approved research discoveries
+
+Add a separate “More to explore” section after the original five profiles: Chi Hack Night, Everyday Democracy, Code for America and Alliance of Civic Technologists. City Bureau / Documenters was not selected and stays out. Clearly label these as research discoveries, not organizations George has personally connected with. Use compact editorial rows with category, overview, why it fits, practical starting point and official sources; keep descriptions at 18px and stack the rows on mobile. Add a section jump link, without renumbering the original five. Preserve Everyday Democracy’s multiracial-democracy/equity focus, Code for America’s government-service emphasis and ACT’s volunteer-network role. Link Chi Hack Night’s current events rather than hard-coding a venue or time.

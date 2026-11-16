@@ -7,6 +7,7 @@ import { Provider } from "./components/provider";
 import { MadeWithRunable } from "./components/made-with-runable";
 
 const Stack = lazy(() => import("./pages/architecture"));
+const Connections = lazy(() => import("./pages/connections"));
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" component={Index} />
         <Route path="/how-i-can-help" component={Help} />
         <Route path="/stack" component={Stack} />
+        <Route path="/connections" component={Connections} />
         <Route path="/architecture"><Redirect to={`/stack${window.location.search}${window.location.hash}`} replace /></Route>
         <Route path="/admin" component={Admin} />
       </Switch>

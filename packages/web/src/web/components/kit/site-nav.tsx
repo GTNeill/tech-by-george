@@ -62,6 +62,7 @@ export function SiteNav() {
               {item.label}
             </a>
           ))}
+          <Link href="/connections" className="label shrink-0 rounded-[3px] px-2.5 py-1.5 transition-colors hover:text-[var(--accent)]">Connections</Link>
         </nav>
 
         <nav className="no-scrollbar order-last -mx-6 mt-3 flex w-[calc(100%+3rem)] items-center gap-1 overflow-x-auto px-6 md:hidden">
@@ -75,6 +76,7 @@ export function SiteNav() {
               {item.label}
             </a>
           ))}
+          <Link href="/connections" className="label shrink-0 rounded-[3px] px-2.5 py-1.5 transition-colors hover:text-[var(--accent)]">Connections</Link>
         </nav>
 
         <div className="ml-auto flex items-center gap-2 md:ml-0">
